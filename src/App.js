@@ -3,10 +3,12 @@ import './App.css';
 import React, { Component } from 'react'
 
 const Web3 = require("@dreamfactoryhr/web3t");
+//const web3 = new Web3("http://127.0.0.1:8083"); 
 const web3 = new Web3('https://testnet-gateway.dev.tolar.io');
+//const web3 = new Web3('https://jsongw.stagenet.tolar.io');
 let tolar = web3.tolar;
 
-let contract_address = "54d069785e5fd46859bd377fdad494045c235e7b2ef9c60b71";
+let contract_address = "5422f87e1f2d25430902f7f06ec87dc03bb4507f5cb0beb5c5";
 
 let getWeb3 = new Promise(function(resolve, reject) {
   // Wait for loading completion to avoid race conditions with web3 injection timing.
@@ -56,8 +58,29 @@ class Game extends React.Component {
     })
   }
 
+  retryWorkWithDelay(tx_hash, delay, maxtries, retry = 1) {
+    var self = this
+    web3.tolar.getTransaction(tx_hash)
+       .then(result => {
+         console.log(result)
+       })
+       .catch( function (status) {
+        if (maxtries > retry) {
+            console.log(status + ' executing with delay ' + delay)
+            setTimeout(() => self.retryWorkWithDelay(tx_hash, delay * (retry + 1), maxtries, retry + 1), delay)
+        } else {
+          console.log('Failed to find tx after ' + retry + ' retries')
+        }
+    })
+  }
+
+  fetchTransactionByHash(tx_hash) {
+    console.log(tx_hash)
+    this.retryWorkWithDelay(tx_hash, 1000, 30, 1)
+  }
+
   handlePurchaseTicket(selected_account) {
-    let lala = window.tolar.request({method:'taq_sendTransaction', params:[{
+    window.tolar.request({method:'taq_sendTransaction', params:[{
       sender_address: selected_account,
       receiver_address: contract_address,
       amount: "100000000000000000",
@@ -66,6 +89,14 @@ class Game extends React.Component {
       data: "0x21846c76"
     }]}).then(result => {
       console.log("SENT PURCHASE");
+      console.log(result)
+      try {
+        this.fetchTransactionByHash(result.txHash)
+      } catch (e) {
+        console.log(e);
+      }
+    }).catch(error => {
+      console.log(error)
     })
   }
 
@@ -100,7 +131,7 @@ class Game extends React.Component {
       "54000000000000000000000000000000000000000023199e2b",
       contract_address,
       0,
-      100000000,
+      10000000,
       1,
       "0x7417040e",
       0
