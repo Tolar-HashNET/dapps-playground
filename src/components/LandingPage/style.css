@@ -1,0 +1,237 @@
+.image-container {
+    width: 100vw;
+    height: auto;
+    position: relative;
+}
+
+.lending-image {
+    width: 100vw;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: -webkit-calc(100% - 5px);
+    height: calc(100% - 5px);
+    color: #FFF;
+    display: block;
+    background: rgba(0, 0, 0, .3);
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.textic {
+    letter-spacing: 10px;
+}
+
+.enter-button {
+    background-color: transparent;
+    font-size: 20px;
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: normal;
+    border-color: white;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.landing-bar {
+    position: absolute;
+    z-index: 100;
+    top: 40px;
+    left: 40px;
+    width: -webkit-calc(100% - 100px);
+    width: calc(100% - 100px);
+}
+
+.landing-bar-left {
+    float: left;
+}
+
+.landing-bar-right {
+    float: right;
+    display: table;
+}
+
+.enter-button-market {
+    background-color: transparent;
+    font-size: 18px;
+    padding: 8px 13px 8px 13px;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: normal;
+    /*border-color: white;
+    border-style: solid;
+    border-width: 1px;*/
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.enter-button-logo {
+    background-color: transparent;
+    font-size: 18px;
+    padding: 8px 13px 8px 13px;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: normal;
+    border-color: white;
+    border-style: none;
+    border-width: 1px;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.ether-img {
+    width: 50px;
+    height: auto;
+}
+
+.ether-button {
+    background-color: transparent;
+    text-decoration: none;
+    display: table-cell;
+    vertical-align: middle;
+    margin-left: 30px;
+}
+
+.ether-filter-green {
+    filter: saturate(250) invert(100%) hue-rotate(110deg);
+}
+
+.ether-filter-red {
+    filter: saturate(170) invert(100%) hue-rotate(-10deg);
+}
+
+.pitch-1-flexbox {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    white-space: pre-wrap;
+    padding-top: 30px;   
+    padding-bottom: 50px;
+}
+
+.pitch-1 {
+    align-self: center;
+    width: 30%;
+}
+
+.pitch-text {
+    white-space: pre-wrap;
+    font-size: 15px;
+}
+
+.pitch-1-image {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.pitch-1-image-outter-container {
+    position: "relative";
+    width: "40%";
+}
+
+.pitch-1-image-container {
+    width: 30%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    height: 70%;
+    margin: auto;
+}
+
+.pitch-2-flexbox {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    white-space: pre-wrap;
+    padding: 30px;
+    /*background: repeating-linear-gradient(
+        -55deg,
+        #222,
+        #222 10px,
+        #333 10px,
+        #333 20px
+      );*/
+    /*background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);*/
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.pitch-3-flexbox {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: stretch;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    white-space: pre-wrap;
+    padding: 40px 10px 40px 150px;
+}
+
+.ul-pitch-style {
+    list-style-type: upper-roman;
+}
+
+.pitch-5-flexbox {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: stretch;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    white-space: pre-wrap;
+    text-align: center;
+    padding: 50px;
+}
+
+.enter-button-2 {
+    background-color: black;
+    font-size: 20px;
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: normal;
+    border-color: white;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.enter-2-container {
+    padding-top: 40px;
+}
+
+.social-bar {
+    position: absolute;
+    align-self: center;
+    bottom: 20px;
+    filter: saturate(250) invert(100%) hue-rotate(110deg);
+}
+
+.social-bar a:active {
+    background: transparent;
+}
+
+.social-bar a:focus {
+    background: transparent;
+}
+
+.social-bar a:hover {
+    background: transparent;
+}
